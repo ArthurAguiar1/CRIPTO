@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cifra de Cesar</title>
+    <link rel="icon" href="Louro.png">
+    <style>
+        body {
+            background-color: rgba(195, 125, 230, 0.454);
+            font-family: Arial;
+        }
+
+        table {
+            border-color: black;
+            border-radius: 2%;
+            background-color: white;
+        }
+
+        tr {
+            background-color: rgb(234, 246, 255);
+        }
+    </style>
+
+    <script>
+        function cripito() {
+            var x = new String(document.forms.txt1.value);
+            var mc = '';
+
+            for (i = 0; i < x.length; i++) {
+                var l = x.charCodeAt(i) + 1;
+                mc += String.fromCharCode(l);
+            }
+            document.forms.txt2.value = mc;
+        }
+
+        function dcripito() {
+            var x = new String(document.forms.txt2.value);
+            var md = '';
+
+            for (i = 0; i < x.length; i++)
+           {
+                var l = x.charCodeAt(i) - 1;
+                md += String.fromCharCode(l);
+            }
+            document.forms.txt1.value = md;
+        }  
+    </script>
+
+</head>
+
+<body>
+    <table border="2px" align="center">
+        <tr>
+            <td align="center">
+                <h2>Cripitografar textos</h2>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <form name="forms">
+                    Texto descriptografado<br><br>
+                    <input type="text" name="txt1"><br><br>
+                    <input type="button" value="Encriptografar" size="5" onclick="cripito()"><br>
+                    <br>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                Texto criptografado<br><br>
+                <input type="text" name="txt2"><br><br>
+                <input type="button" value="Descriptografar" size="5" onclick="dcripito()"><br>
+                <br>
+            </td>
+        </tr>
+        </form>
+    </table>
+</body>
+
+</html>
